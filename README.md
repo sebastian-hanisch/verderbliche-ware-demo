@@ -1,7 +1,6 @@
 # Verderbliche Ware: Zustand = Alter – Streamlit-Demo
 
-<!-- Nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-verderbliche-ware-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-verderbliche-ware-demo.streamlit.app/)**
 
 Demo der Reihe **Bestandspolitiken** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Sie knüpft an Demos an, bei denen der Zustand eine einzige Zahl ist (Bestand oder Bestandsposition): Hier hat Ware eine **feste Haltbarkeit**, der Zustand ist der Bestand je Restlebensdauer, und die Frage lautet, ob die Bestellregel dieses **Alter** kennen muss. Gerechnet wird die beste Bestellpolitik exakt (relative Wertiteration über alle Altersverteilungen) und mit einfachen Regeln verglichen. Eine Periode ohne Alterung behandelt `newsvendor-evpi-demo`; Prognose und Base-Stock aus der Prognose `forecast-inventory-demo`.
 
