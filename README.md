@@ -30,7 +30,7 @@ Alle Zahlen gelten für das Modell oben (Mittel 3, h = 1, p = 9, Grenze 12; das 
 
 | Befund | Test |
 |---|---|
-| Lieferzeit 0, FIFO: der beste Base-Stock ist in **26 von 30** Zellen exakt (Lücke unter 0,005 %, Q-Abstand 0). Ausnahmen: Haltbarkeit 2 mit w = 0 (+1,25 %), w = 10 (+0,36 %), w = 30 (+1,36 %) und Haltbarkeit 3 mit w = 30 (+1,01 %) | `test_k1_lead0_fifo_base_stock_is_exact_in_26_of_30_cells_with_four_exceptions` |
+| Lieferzeit 0, FIFO: der beste Base-Stock ist in **26 von 30** Zellen exakt (Lücke unter 0,005 %, Q-Abstand 0). Ausnahmen: Haltbarkeit 2 mit w = 0 (+1,25 %), w = 10 (+0,36 %), w = 30 (+1,36 %) und Haltbarkeit 3 mit w = 30 (+1,01 %). Ohne die Zellen mit w = 0 (die Erklärseite schließt sie aus) sind es **21 von 24** (drei Ausnahmen); die Zahl ist aus dieser Ausnahmenliste abgeleitet, nicht eigener Test | `test_k1_lead0_fifo_base_stock_is_exact_in_26_of_30_cells_with_four_exceptions` |
 | Lieferzeit 0, LIFO: bei w = 1 = h exakt in 6 von 6 Zellen; bei w = 3 fällt die Lücke mit der Haltbarkeit (+3,80 / 1,50 / 0,63 / 0,26 / 0,11 / 0,05 % für m = 2 bis 7), bei w = 10 (+6,15 bis +9,61 %) und w = 30 (+11,86 bis +26,69 %) nicht; über die 18 Zellen mit w ≥ 3: +0,05 bis +26,69 % | `test_k2_lead0_lifo_gaps_by_w` |
 | Lieferzeit 0, LIFO, w = 0: Lücken +1,37 / 0,30 / 0,55 / 0,95 / 0,72 / 0,37 % (m = 2 bis 7), Randfall der Kostenkonvention | `test_k3_lead0_w_zero_lifo_gaps_are_small_but_not_zero` |
 | Erwartete Ablaufmenge je Periode unter Base-Stock S = 5 (Lieferzeit 0, Haltbarkeit 2 bis 5): FIFO 0,3446 / 0,0566 / 0,0076 / 0,0009, LIFO 0,832 / 0,441 / 0,267 / 0,174. Passt zur Kostenzerlegung, in der das Alter nur über (w − h)·Ablaufmenge eingeht | `test_k4_expected_waste_at_base_stock_5_fifo_against_lifo` |

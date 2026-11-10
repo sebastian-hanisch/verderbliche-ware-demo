@@ -70,6 +70,17 @@ Weiter unten: sechs Reiter (Handbeispiel in Brüchen, Raster, Zustandsraum, „W
 """
 )
 
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/verderbliche-ware-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Verderbliche Ware hat eine feste **Haltbarkeit**. Zum Zustand des Lagers gehört dann nicht nur, wie viel da ist, sondern auch, wie alt die Ware ist. Die Demo fragt, ob die Bestellregel dieses **Alter** kennen muss. Sie rechnet die beste Regel exakt aus und vergleicht sie mit einfachen Regeln, etwa „auf einen festen Gesamtbestand auffüllen“ (**Base-Stock**) und einer **Altersregel**, die zusätzlich die älteste Ware berücksichtigt. Das Ergebnis hängt stark davon ab, welche Ware zuerst ausgegeben wird: die älteste (**FIFO**) oder die frischeste (**LIFO**). Das gilt für die gerechneten Fälle im Modell der Demo (zufällige Nachfrage, erzeugte Kosten, verlorene Nachfrage), nicht für echte Lager.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/verderbliche-ware-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
+
 with st.expander("So funktioniert die Altersführung", expanded=True):
     st.markdown(
         """
@@ -298,6 +309,25 @@ with st.expander("⚠️ Annahmen, Grenzen und bekannte Probleme"):
     st.markdown(C.ASSUMPTIONS_MARKDOWN)
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/verderbliche-ware-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind Haltbarkeit $m$, Lieferzeit $L \in \{0, 1\}$, die Nachfrageverteilung (Poisson, Mittel 3), Kosten $h$, $p$, $w$ und eine Ausgaberegel (FIFO oder LIFO). Gesucht ist die Bestellmenge $a$ je Zustand $z$, die die erwarteten Kosten je Periode minimiert, und der Abstand einfacher Regeln dazu.
+
+| Symbol | Bedeutung |
+|---|---|
+| $z = (z_1, \dots, z_k)$ | Bestand je Restlebensdauer, $z_1$ = älteste Klasse; $k = m - 1$ bei $L = 0$, $k = m$ bei $L = 1$ |
+| $T$ | Bestandsgrenze (12) |
+| $d$ | Nachfrage einer Periode |
+| $y$ | Bestand beim Verkauf (Lieferzeit 0: nach der Bestellung) |
+| $A$ | Menge, die am Periodenende abläuft (Rest der ältesten Klasse nach der Ausgabe) |
+| $h, p, w$ | Kosten je übertragenem, fehlendem, ablaufendem Stück |
+| $g$ | erwartete Kosten je Periode |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/verderbliche-ware-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Gegeben und gesucht.** Gegeben sind Haltbarkeit $m$, Lieferzeit $L \in \{0, 1\}$, die Nachfrageverteilung (Poisson, Mittel 3), Kosten $h$, $p$, $w$ und eine Ausgaberegel (FIFO oder LIFO). Gesucht ist die Bestellmenge $a$ je Zustand $z$, die die erwarteten Kosten je Periode minimiert, und der Abstand einfacher Regeln dazu.
